@@ -1,0 +1,15 @@
+# =============================================
+# railway.toml - Configuração da Railway
+# @LOJINHA - Loja Virtual PHP
+# =============================================
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "docker-entrypoint.sh apache2-foreground"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
